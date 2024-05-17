@@ -2,7 +2,7 @@ import { StyleSheet, View, Pressable, Text } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import React from 'react';
 
-const CustomButton = ({ label, theme }) => {
+const CustomButton = ({ label, theme, onPress }: { label: any; theme: any; onPress: any; }) => {
     if (theme === 'primary') {
         return (
             <View
@@ -13,7 +13,7 @@ const CustomButton = ({ label, theme }) => {
             >
                 <Pressable
                     style={[styles.button, { backgroundColor: '#fff' }]}
-                    onPress={() => alert('You pressed a button.')}
+                    onPress={onPress}
                 >
                     <FontAwesome
                         name='picture-o'
@@ -33,7 +33,7 @@ const CustomButton = ({ label, theme }) => {
         <View style={styles.buttonContainer}>
             <Pressable
                 style={styles.button}
-                onPress={() => alert('You pressed a button.')}
+                onPress={onPress}
             >
                 <Text style={styles.buttonLabel}>{label}</Text>
             </Pressable>
